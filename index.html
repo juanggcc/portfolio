@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist Presentation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5/1F3FkyDILAH8oE5q2vJF5MkCAjzd4e5z9s4GcZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5/1F3FkyDILAH8oE5q2vJF5MkCAjzd4e5z9s4GcZ" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5wn6+5iU6l1U6L3Uz8szpEFl+U6XCp+HHAAK5GSLf" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            background-color: #F6F6F6;
+            color: #333333;
+        }
+        .scrolling-container {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        height: 100px; /* Adjust the height according to your preference */
+        }
+
+        .artist-title {
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%; /* Set the height to match the scrolling container */
+            width: auto; /* Automatically adjust the width while maintaining the aspect ratio */
+            animation: scroll-left 26s linear infinite;
+            opacity: 0;
+        }
+
+        .second-title {
+            animation-delay: 13s; /* Delay the animation of the second title */
+        }
+
+        @keyframes scroll-left {
+            0% {
+                right: 0%;
+                opacity: 1;
+            }
+            100% {
+                right: 100%;
+                opacity: 1;
+            }
+        }
+        .artist-name {
+            max-width: 50%;
+            margin: 0 auto;
+            border-radius: 5px;
+        }
+
+        .artist-image {
+            max-width: 30%;
+            margin: 0 auto;
+            border-radius: 5px;
+        }
+
+        .description {
+            margin: 20px;
+            font-style: italic;
+            font-weight: 600;
+        }
+
+        .text-info {
+            font-style: italic;
+            font-weight: 500;
+            text-align: center;
+            width: 800px;
+            margin: 15px auto;
+        }
+
+        .influences {
+        text-align: center;
+        }
+        
+
+        .carousel {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+        }
+        
+        .carousel-content {
+            display: flex;
+            transition: transform 0.3s ease;
+        }
+
+        .carousel-content img {
+            width: 25%; /* Display 4 images at the same time */
+        }
+
+        .arrow {
+            background: transparent;
+            border: none;
+            font-size: 2em;
+            padding: 0.5em;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        .arrow-left {
+            position: absolute;
+            left: 0;
+        }
+
+        .arrow-right {
+            position: absolute;
+            right: 0;
+        }
+
+        .influences img {
+            width: 23%;
+            margin: 1%;
+            border-radius: 5px;
+        }
+
+        .listen-chorus {
+            margin-bottom: 20px;
+        }
+        .artistic-influences {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 800px;
+        margin: 0 auto;
+        }
+
+        .artistic-influences li {
+            padding: 10px;
+            margin: 10px;
+            background-color: #ADD8E6;
+            border-radius: 5px;
+            color: #333333;
+            font-weight: 600;
+        }
+
+        button {
+            background-image: linear-gradient(135deg, #FFC0CB, #FFA07A);
+            border: none;
+            border-radius: 50px;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            color: #333333;
+            transition: background-image 0.3s;
+        }
+
+        button:hover {
+            background-image: linear-gradient(135deg, #FFA07A, #FFC0CB);
+        }
+        .music-button {
+        font-family: 'Arial', sans-serif; /* Replace with a modern font of your choice */
+        font-size: 16px;
+        background-image: linear-gradient(135deg, #c0b7e3, #e3c0e0);
+        border-radius: 5px;
+        padding: 8px 12px;
+        margin-right: 10px; /* Separates buttons */
+        color: #333;
+        border: none;
+        cursor: pointer;
+        }
+
+        .music-button:hover {
+            background-image: linear-gradient(135deg, #b0a6d3, #d3b0d0);
+        }
+        h2 {
+            color: #ADD8E6;
+            font-family: 'Lucida Console', monospace;
+        }
+        .demos-section {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .demo-button {
+            background-image: linear-gradient(135deg, #7A5DC7, #e3c0e0);
+            background-color: #9370DB;
+            color: white;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            width: 100px;
+            height: 100px;
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 10px;
+            font-size: 14px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .demo-button i {
+            font-size: 36px;
+            margin-bottom: 5px;
+        }
+
+        .demo-button:hover {
+            background-image: linear-gradient(135deg, #7A5DC7, #d3b0d0);
+            background-color: #7A5DC7;
+        }
+    </style>
+    <script>
+        var currentAudio = null;
+
+        function playAudio(audioId) {
+            var audio = document.getElementById(audioId);
+
+            if (currentAudio && currentAudio !== audio) {
+                currentAudio.pause();
+                currentAudio.currentTime = 0;
+            }
+
+            if (audio.paused) {
+                // Set the currentTime to a random position within the 100 seconds duration
+                audio.currentTime = Math.floor(Math.random() * 50);
+                audio.play();
+                currentAudio = audio;
+            } else {
+                audio.pause();
+            }
+        }
+        function playAudio2(audioId) {
+            var audio = document.getElementById(audioId);
+
+            if (currentAudio && currentAudio !== audio) {
+                currentAudio.pause();
+                currentAudio.currentTime = 0;
+            }
+
+            if (audio.paused) {
+                // Set the currentTime to a random position within the 100 seconds duration
+                //audio.currentTime = Math.floor(Math.random() * 50);
+                audio.play();
+                currentAudio = audio;
+            } else {
+                audio.pause();
+            }
+        }
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+        const carouselContent = document.querySelector(".carousel-content");
+        const arrowLeft = document.querySelector(".arrow-left");
+        const arrowRight = document.querySelector(".arrow-right");
+
+        const imageWidth = carouselContent.clientWidth / 4;
+        let currentScroll = imageWidth;
+        carouselContent.style.transform = `translateX(-${currentScroll}px)`;
+
+        arrowLeft.addEventListener("click", () => {
+            if (currentScroll > 0) {
+                carouselContent.style.transition = "transform 0.3s ease";
+                currentScroll -= imageWidth;
+                carouselContent.style.transform = `translateX(-${currentScroll}px)`;
+            }
+        });
+
+        arrowRight.addEventListener("click", () => {
+            if (currentScroll < carouselContent.scrollWidth - carouselContent.clientWidth) {
+                carouselContent.style.transition = "transform 0.3s ease";
+                currentScroll += imageWidth;
+                carouselContent.style.transform = `translateX(-${currentScroll}px)`;
+            }
+        });
+        });
+      </script>
+
+</head>
+<body>
+    <div class="scrolling-container">
+        <img class="artist-title" src="assets/chicobello2.png" alt="Artist Name">
+        <img class="artist-title second-title" src="assets/chicobello2.png" alt="Artist Name">
+    </div>
+    <div class="artist-image-container">
+        <br>
+        <br>
+        <img class="artist-image" src="assets/GWAPO COVER.jpeg" alt="Artist Photo">
+    </div>
+    <div class="description">
+        <p>Nico Bello es un artista residente en madrid que lleva muchos años en la escena y ha pasado por muchisimas producciones y actuaciones en directo.</p>
+        <p>La propuesta se basa en un Pop de ritmos rapidos y letras directas en forma de una reinterpretacion de la musica disco de los 80 y la electronica del final de los 90'. Sin embargo tambien contiene la complejidad del que realmente aprecia la musica pero sin llegar a perderse el virtuosismo y manteniendo la facil escucha que al fin y al cabo es lo importante para alquien que solo quiere sentirse identificado con un arte.</p>
+
+    </div>
+    <br>
+    <br>
+    <div class="influences">
+        <h2>Influencias estéticas</h2>
+        <div class="description">
+            <p>El proyecto plantea una estética personal y directa, en la que se asocie directamente una cara y un estilo con la musica y en la que evolucionan a la vez la sonoridad y lo visual.</p>
+        </div>        
+        <div class="carousel">
+            <button class="arrow arrow-left">&#10094;</button>
+            <div class="carousel-content">
+              <img src="assets/tyler.jpeg" alt="Influence 5" class="clone">
+              <img src="assets/lewis.jpeg" alt="Influence 2">
+              <img src="assets/FillMeUp.jpg" alt="Influence 1">
+              <img src="assets/benee.jpg" alt="Influence 3">
+              <img src="assets/paco.jpeg" alt="Influence 4">
+              <img src="assets/tyler.jpeg" alt="Influence 5">
+              <img src="assets/lewis.jpeg" alt="Influence 2">
+              <img src="assets/FillMeUp.jpg" alt="Influence 1">
+              <img src="assets/benee.jpg" alt="Influence 3">
+              <img src="assets/paco.jpeg" alt="Influence 4">
+              <img src="assets/tyler.jpeg" alt="Influence 5">
+            </div>
+            <button class="arrow arrow-right">&#10095;</button>
+        </div>
+    </div>
+    
+    <br>
+    <br>
+    <h2 class="section-title">Influencias artísticas</h2>
+      
+    <div class="influences-container">
+        <ul class="artistic-influences">
+            <li>Breakbot</li>
+            <li>LCD SoundSystem</li>
+            <li>Jungle</li>
+            <li>Jai Paul</li>
+            <li>La casa azul</li>
+            <li>Quincy Jones</li>
+            <li>Ca7riel</li>
+            <li>Yuskek</li>
+            <li>Novedades Carminha</li>
+        </ul>
+    </div>
+    <div class="description">
+        <p>El estilo musical bebe de la musica disco y funk pero sin caer en el cliché de repetir la misma historia 20 años mas tarde. Es una reinterpretacion de la musica de los 80 llevada al contexto de ahora en la que la limitacion de recursos de hacer musica en una habitacion es lo que expande la creatividad y lo que hace que el oyente se identifique con esa "humanidad" en lo imperfecto.</p>
+    </div> 
+    <br>
+    <br>
+    <h2 class="section-title">Escucha el producto</h2>
+    <div class="text-info">
+        <p>Un EP de cuatro canciones es el debut de este proyecto. Grabado en habitaciones y estudios, cuenta con parte de producción de Manu Blanco (Blanco Palamera) y mezclado y co-producido en Los Invernaderos por Pablo Cuerno (AMORE, Mori, Interrogación Amor, Megansito el guapo).</p>
+        <p>En estas canciones priman y destacan los estribillos. Aqui puedes escuchar momentos aleatorios de las canciones para hacerse una idea antes de tener que escucharlo entero.</p>
+    </div>
+    <div class="listen-chorus">
+        <button class="music-button" onclick="playAudio('audio1')">&#9658; Que Dirían</button>
+        <audio id="audio1" src="assets/HILIGHT Que dirian.mp3" preload="none"></audio>
+        
+        <button class="music-button" onclick="playAudio('audio2')">&#9658; Lo Mas</button>
+        <audio id="audio2" src="assets/HILIGHT Lo mas.mp3" preload="none"></audio>
+        
+        <button class="music-button" onclick="playAudio('audio3')">&#9658; Va a funcionar</button>
+        <audio id="audio3" src="assets/HILIGHT Va a funcionar.mp3" preload="none"></audio>
+        
+        <button class="music-button" onclick="playAudio('audio4')">&#9658; James Baxterr</button>
+        <audio id="audio4" src="assets/HILIGHT Brooke.mp3" preload="none"></audio>
+    </div>
+    <section class="soundcloud-playlist-section">
+        <!-- Replace the code below with the actual embed code you copied from SoundCloud -->
+        <iframe width="800px" height="350" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1611440923%3Fsecret_token%3Ds-RLyZIqS2peF&color=%23f0bdff&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/psimoonallen" title="PsiMooNAllen" target="_blank" style="color: #cccccc; text-decoration: none;">PsiMooNAllen</a> · <a href="https://soundcloud.com/psimoonallen/sets/gwapo/s-RLyZIqS2peF" title="GWAPO" target="_blank" style="color: #cccccc; text-decoration: none;">GWAPO</a></div>    </section> 
+    <br><br>
+    <section class="demos-section">
+        <h2>Demos - Visión de futuro</h2>
+        <div class="text-info">
+            <p>Pero esto no es lo único, despues de grabar y producir con otros artistas se ve un futuro en este proyecto, un Disco completo de 9 canciones en el que se reafirma y define el sonido que va a prevalecer los proximos años de este artista.</p>
+            <p>Mas garra, mas intención, el sonido de quien sabe lo que quiere.</p>
+
+        </div>
+        
+        <button class="demo-button" onclick="playAudio2('audio5')" id="demo1">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+                <circle cx="12" cy="12" r="10"></circle>
+                <circle cx="12" cy="12" r="4"></circle>
+                <line x1="4.93" y1="4.93" x2="9.17" y2="9.17"></line>
+                <line x1="14.83" y1="14.83" x2="19.07" y2="19.07"></line>
+                <line x1="14.83" y1="9.17" x2="19.07" y2="4.93"></line>
+                <line x1="14.83" y1="19.07" x2="19.07" y2="14.83"></line>
+                <line x1="4.93" y1="19.07" x2="9.17" y2="14.83"></line>
+                <line x1="4.93" y1="14.83" x2="9.17" y2="19.07"></line>
+            </svg>
+            <span>Demo 1</span>
+        </button>
+        <button class="demo-button"  id="demo2" onclick="playAudio2('audio6')">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+                <circle cx="12" cy="12" r="10"></circle>
+                <circle cx="12" cy="12" r="4"></circle>
+                <line x1="4.93" y1="4.93" x2="9.17" y2="9.17"></line>
+                <line x1="14.83" y1="14.83" x2="19.07" y2="19.07"></line>
+                <line x1="14.83" y1="9.17" x2="19.07" y2="4.93"></line>
+                <line x1="14.83" y1="19.07" x2="19.07" y2="14.83"></line>
+                <line x1="4.93" y1="19.07" x2="9.17" y2="14.83"></line>
+                <line x1="4.93" y1="14.83" x2="9.17" y2="19.07"></line>
+            </svg>
+            <span>Demo 2</span>
+        </button>
+        <audio id="audio5" src="assets/HILIGHT DEMO 1.mp3" preload="none"></audio>
+
+        <audio id="audio6" src="assets/HILIGHT DEMO 2.mp3" preload="none"></audio>
+
+    </section>
+    
+</body>
+</html>
