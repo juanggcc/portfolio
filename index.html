@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -132,7 +133,10 @@
             }
         }
 
-
+        .fab.fa-instagram {
+        font-size: 32px;
+        margin-right: 8px;
+        }
 
 
         .listen-chorus {
@@ -233,6 +237,21 @@
                 width: 100%;
             }
         }
+        .image-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        }
+
+        .gallery-item {
+        flex: 0 1 calc(25% - 10px);
+        }
+
+        .gallery-item img {
+        width: 100%;
+        height: auto;
+        }
     </style>
     <script>
         var currentAudio = null;
@@ -302,14 +321,19 @@
         <img class="artist-image" src="assets/GWAPO COVER.jpeg" alt="Artist Photo">
     </div>
     <div class="description">
-        <p>Nico Bello es un artista residente en madrid que lleva muchos años en la escena y ha pasado por muchisimas producciones y actuaciones en directo.</p>
-        <p>La propuesta se basa en un Pop de ritmos rapidos y letras directas en forma de una reinterpretacion de la musica disco de los 80 y la electronica del final de los 90'. Sin embargo tambien contiene la complejidad del que realmente aprecia la musica pero sin llegar a perderse el virtuosismo y manteniendo la facil escucha que al fin y al cabo es lo importante para alquien que solo quiere sentirse identificado con un arte.</p>
+        <p>Bello es el proyecto en solitario de Nico Bello, un artista de Madrid con varios años escena. Ha sido miembro de varias bandas y actuado en Tourjets, Derrumbe, San Marino, Rothrigo.</p>
+        <p>Su propuesta se basa en un Pop de ritmos rapidos y letras directas en forma de una reinterpretacion de la musica disco de los 80 y la electronica del final de los 90'. 
+           Tambien contiene la complejidad del que realmente aprecia la musica, manteniendo la facil escucha. Al fin y al cabo es lo importante para alquien, solo quiere sentirse identificado con un arte.</p>
     </div>
     <div class="influences">
         <h2>Influencias estéticas</h2>
         <div class="description">
-            <p>El proyecto plantea una estética personal y directa, en la que se asocie directamente una cara y un estilo con la musica y en la que evolucionan a la vez la sonoridad y lo visual.</p>
-        </div>        
+            <p>El proyecto plantea una estética personal y directa, en la que se asocie directamente una cara y un estilo con la musica y en la que evolucionan a la vez la sonoridad y lo visual. El modelo es que el publico evolucione con el artista y el artista con su publico siendo una figura cercana.</p>
+         
+        </div> 
+        <div class="text-info">
+            <p>Esta cercanía se ve representada en la musica tambien. Es una música en la que se nota una fuerte personalidad marcada por la decision de limitar los recursos a la hora de grabar y colaborar con otros productores.</p>
+        </div>
         <div class="carousel">
             <button class="arrow arrow-left">&#10094;</button>
             <div class="carousel-content">
@@ -402,6 +426,35 @@
         <audio id="audio6" src="assets/HILIGHT DEMO 2.mp3" preload="none"></audio>
 
     </section>
+<h2>El Pive</h2>
+<br>
+    <section class="image-gallery">
+ 
+        <div class="gallery-item">
+          <img src="assets/nico1.jpg" alt="Image 1">
+        </div>
+        <div class="gallery-item">
+          <img src="assets/nico2.jpg" alt="Image 2">
+        </div>
+        <div class="gallery-item">
+          <img src="assets/nico3.jpg" alt="Image 3">
+        </div>
+        <div class="gallery-item">
+            <img src="assets/nico5.jpeg" alt="Image 4">
+          </div>
+        <div class="gallery-item">
+          <img src="assets/nico4.jpg" alt="Image 4">
+        </div>
+
+        <!-- Add more images as needed -->
+      </section>
+      
     
 </body>
+<footer>
+    <h2>Instagram:</h2>
+    <a href="https://www.instagram.com/simunn.p/" target="_blank">
+      <i class="fab fa-instagram"></i>
+    </a>
+  </footer>
 </html>
