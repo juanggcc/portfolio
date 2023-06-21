@@ -252,6 +252,25 @@
         width: 100%;
         height: auto;
         }
+
+        #video-section {
+        text-align: center;
+        padding: 40px 0;
+        }
+
+        .video-container {
+        display: inline-block;
+        margin: 0 20px;
+        }
+
+        .video-container video {
+        width: 180px; /* Adjust the width for vertical videos */
+        height: 320px; /* Adjust the height for vertical videos */
+        }
+
+        .video-container p {
+        margin-top: 10px;
+        }
     </style>
     <script>
         var currentAudio = null;
@@ -433,7 +452,7 @@
         <audio id="audio6" src="assets/HILIGHT DEMO 2.mp3" preload="none"></audio>
 
     </section>
-<h2>El Pive</h2>
+<h2>SIMUN HOY</h2>
 <br>
     <section class="image-gallery">
  
@@ -452,11 +471,49 @@
         <div class="gallery-item">
           <img src="assets/simun5.jpg" alt="Image 4">
         </div>
+        <div class="gallery-item">
+            <img src="assets/simun8.jpg" alt="Image 4">
+          </div>
 
         <!-- Add more images as needed -->
       </section>
       
-    
+      <section id="video-section">
+        <h2>Videos de directo</h2>
+        
+        <div class="video-container">
+          <video controls>
+            <source src="assets/Que dirian publi small2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <p>Que dirían</p>
+        </div>
+      
+        <div class="video-container">
+          <video controls>
+            <source src="assets/Terry 2 portfolio small.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <p>Demo 2</p>
+        </div>
+        
+        <div class="video-container">
+            <video controls>
+              <source src="assets/Final portfolio small.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <p>Final del concierto</p>
+          </div>
+
+          <div class="video-container">
+            <video controls>
+              <source src="assets/terry1 portfolio small.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <p>Demo 1</p>
+          </div>
+        
+      </section> 
 </body>
 <footer>
     <h2>Instagram:</h2>
